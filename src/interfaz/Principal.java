@@ -116,7 +116,7 @@ public class Principal extends javax.swing.JFrame {
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
       String res;
       double n1, n2, resultado=0;
-      int op, sw=1;
+      int op, sw = 1;
       
       if(txtNumeroUno.getText().trim().isEmpty()){
           JOptionPane.showMessageDialog(this, "Digite el número uno", "Error", JOptionPane.ERROR_MESSAGE);
@@ -147,17 +147,18 @@ public class Principal extends javax.swing.JFrame {
               txtNumeroDos.selectAll();
               sw=0;
           }
+      }
       
       if (sw==1) {
           n1= Double.parseDouble(txtNumeroUno.getText());
           n2= Double.parseDouble(txtNumeroDos.getText());
           op= cmbOperacion.getSelectedIndex();
-      }
+      
        if(op == 3 && n2 == 0){
           JOptionPane.showMessageDialog(this, "No digite cero en el segundo número", "Error", JOptionPane.ERROR_MESSAGE);
           txtNumeroDos.requestFocusInWindow();
           txtNumeroDos.selectAll();
-       }else {
+       } else {
       
       switch(op){
           case 0:
@@ -177,10 +178,12 @@ public class Principal extends javax.swing.JFrame {
       res = String.valueOf(resultado);
       txtResultado.setText(res);
       }
-      } 
+      
+      }
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
     private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+        
         txtNumeroUno.setText("");
         txtNumeroDos.setText("");
         txtResultado.setText("");
